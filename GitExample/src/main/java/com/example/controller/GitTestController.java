@@ -9,6 +9,8 @@ public class GitTestController {
 	@GetMapping("/getMessage")
 	public String getMessage() {
 		System.out.println("Mumbai");
+		System.out.println("Pune");
+		
 		return "Hello World";
 		
 	}
