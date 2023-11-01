@@ -10,6 +10,7 @@ public class GitTestController {
 	public String getMessage() {
 		System.out.println("Mumbai");
 		System.out.println("Pune");
+		System.out.println("Dhule");
 		
 		return "Hello World";
 		
