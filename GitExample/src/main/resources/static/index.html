@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Excel Data</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	
+    <button id="downloadExcelButton">Download Excel</button>n
+
+    <script>
+        $(document).ready(function () {
+            $("#downloadExcelButton").click(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/getExcel",
+                    xhrFields: {
+                        responseType: "blob" // Specify the response type as blob
+                    },
+                    success: function (data) {
+						alert(data)
+                        // Create a blob URL and trigger the download
+                        <!--var blob = new Blob([data], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });-->
+                        var blob = new Blob([data], { type: "application/octet-stream" });
+                        var url = window.URL.createObjectURL(blob);
+                        var a = document.createElement("a");
+                        a.href = url;
+                        a.download = "employee_data.xls";
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                    },
+                    error: function (error) {
+                        console.error("Error downloading Excel:", error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
