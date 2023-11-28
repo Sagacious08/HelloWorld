@@ -2,11 +2,32 @@
 <html>
 <head>
     <title>Download Excel Data</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.js"></script>
 </head>
+
+
 <body>
 	
-    <button id="downloadExcelButton">Download Excel</button>n
+    <button id="downloadExcelButton">Download Excel</button>
+    <br>
+     <button id="showDateRangePicker">Open Date Range Picker</button>
+    <div id="dateRangePicker" style="display: none;"></div>
+
+    <script>
+        // Initialize the DateRangePicker
+        $(document).ready(function() {
+            $('#dateRangePicker').dateRangePicker();
+        });
+
+        // Show/hide Date Range Picker on button click
+        $('#showDateRangePicker').on('click', function() {
+            $('#dateRangePicker').toggle();
+        });
+    </script>
+
+
+
 
     <script>
         $(document).ready(function () {
