@@ -87,8 +87,8 @@
         <configuration>
           <type>runtime</type>
           <properties>
-            <cargo.remote.username>your_username</cargo.remote.username>
-            <cargo.remote.password>your_password</cargo.remote.password>
+            <cargo.remote.username>tomcat</cargo.remote.username>
+            <cargo.remote.password>s3cret</cargo.remote.password>
           </properties>
         </configuration>
       </configuration>
